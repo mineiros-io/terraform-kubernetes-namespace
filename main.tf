@@ -1,5 +1,10 @@
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# THIS IS A UPPERCASE MAIN HEADLINE
-# And it continues with some lowercase information about the module
-# We might add more than one line for additional information
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+resource "kubernetes_namespace" "namespace" {
+  count = var.module_enabled ? 1 : 0
+
+  metadata {
+    name        = var.name
+    annotations = var.annotations
+    labels      = var.labels
+  }
+
+}
