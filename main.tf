@@ -7,4 +7,5 @@ resource "kubernetes_namespace" "namespace" {
     labels      = var.labels
   }
 
+  depends_on = [var.module_depends_on]
 }
