@@ -58,7 +58,7 @@ section {
 
       ```hcl
       module "terraform-kubernetes-namespace" {
-        source = "git@github.com:mineiros-io/terraform-kubernetes-namespace.git?ref=v0.0.1"
+        source = "git@github.com:mineiros-io/terraform-kubernetes-namespace.git?ref=v0.0.2"
 
         name = "name-of-namespace"
       }
